@@ -1,1 +1,1 @@
-web: python web.py
+web: python final_assignment.py

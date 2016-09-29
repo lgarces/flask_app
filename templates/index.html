@@ -5,11 +5,11 @@
 	<body>
 		<div class="jumbotron">
 			<div class="container">
-				{% if forecast %}
-					<h1>{{ forecast }}</h1>
+				{% if businesses %}
+					<h1>{{ businesses }}</h1>
 					<a href="{{ url_for('index') }}">Look up another address</a>
 				{% else %}
-					<h1>Hello! Where do you live?</h1>
+					<h1>Congratulations, you finished OneMonth Python! Where are you getting a drink to celebrate?</h1>
 					<form action="/" class="form-inline">
 						<div class="form-group">
 						<input type="text" name="address" placeholder="City, State" class="form-control">
@@ -17,6 +17,11 @@
 						<input type="submit" value="Submit" class="btn btn-primary">
 					</form>
 				{% endif %}
+
+				{% for business in businesses %}
+					{{ business.name }}
+				{% endfor %}
+
 				<a href="{{ url_for('about') }}">About this project</a>
 			</div>
 		</div>
